@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker - Login/Signup</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Spline 3D Viewer with Stars -->
+  <div class="spline-wrapper">
+    <spline-viewer url="https://prod.spline.design/cdoMyl4KLhkhoNx0/scene.splinecode" events-target="global"></spline-viewer>
+    <div class="stars"></div>
+  </div>
+  
+  <!-- Container for Forms -->
+  <div class="container login-active" id="container">
+    <!-- Login Form -->
+    <div class="form-container login-form" id="login-form">
+      <div class="form-box">
+        <h2>Login</h2>
+        <div class="error-message" id="login-error"></div>
+        <form id="auth-login-form" novalidate>
+          <div class="input-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" placeholder="Enter your email" required>
+            <div class="validation-error" id="login-email-error"></div>
+          </div>
+          <div class="input-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Enter your password" required>
+            <div class="validation-error" id="login-password-error"></div>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <button class="toggle-btn signup-btn" id="show-signup">Sign Up</button>
+      </div>
+    </div>
+    
+    <!-- Signup Form -->
+    <div class="form-container signup-form" id="signup-form">
+      <div class="form-box">
+        <h2>Sign Up</h2>
+        <div class="error-message" id="signup-error"></div>
+        <form id="auth-signup-form" novalidate>
+          <div class="input-group">
+            <label for="signup-name">Name</label>
+            <input type="text" id="signup-name" placeholder="Enter your name" required>
+            <div class="validation-error" id="signup-name-error"></div>
+          </div>
+          <div class="input-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" placeholder="Enter your email" required>
+            <div class="validation-error" id="signup-email-error"></div>
+          </div>
+          <div class="input-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" placeholder="Enter your password" required>
+            <div class="validation-error" id="signup-password-error"></div>
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+        <button class="toggle-btn login-btn" id="show-login">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

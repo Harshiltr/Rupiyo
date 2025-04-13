@@ -1,0 +1,203 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: transparent;
+  }
+  
+  .logo {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .top-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Dropdown */
+  .dropbtn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    min-width: 120px;
+    right: 0;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+  }
+  
+  .slider:before {
+    content: "";
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(30px);
+  }
+  
+  .icon {
+    font-size: 14px;
+    pointer-events: none;
+  }
+  
+  body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f4;
+  }
+  
+  body.dark-mode .month-section {
+    background-color: #1e1e1e;
+    color: white;
+  }
+  
+  body.dark-mode .transaction {
+    background-color: #2c2c2c;
+    color: white;
+  }
+  
+  .history-container {
+    padding: 0 30px;
+    margin-top: 20px;
+  }
+  
+  .month-section {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: background-color 0.3s;
+  }
+  
+  .month-header {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .transaction {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .transaction:last-child {
+    border-bottom: none;
+  }
+  
+  .transaction-amount.positive {
+    color: #4caf50;
+  }
+  
+  .transaction-amount.negative {
+    color: #f44336;
+  }
+  
+  @media (max-width: 600px) {
+    .top-bar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .top-controls {
+      margin-top: 10px;
+      gap: 12px;
+      flex-direction: row-reverse;
+    }
+  
+    .transaction {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .month-header {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+  

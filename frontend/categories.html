@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupiyo - Categories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="categories.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">Rupiyo</a>
+            <button class="navbar-toggler" id="navbarToggler">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="navbar-nav" id="navbarNav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="active">Categories</a></li>
+                <li><a href="transaction.html">Transactions</a></li>
+                <!-- <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li> -->
+                <li class="user-profile" id="userProfile">
+                    <i class="fas fa-user" id="userIcon"></i>
+                    <span id="userName">Guest</span>
+                </li>
+            </ul>
+            <div class="profile-dropdown" id="profileDropdown">
+                <div class="profile-info">
+                    <p><strong id="profileName">Guest</strong></p>
+                    <p id="profileEmail">guest@example.com</p>
+                </div>
+                <button class="edit-btn" id="editProfileBtn">Edit Profile</button>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="login-container" id="loginContainer">
+        <h2>Login to Rupiyo</h2>
+        <input type="text" id="loginName" placeholder="Enter your name">
+        <input type="email" id="loginEmail" placeholder="Enter your email">
+        <label for="loginIcon">Choose Profile Icon</label>
+        <select id="loginIcon">
+            <option value="fa-user">User</option>
+            <option value="fa-cat">Cat</option>
+            <option value="fa-dog">Dog</option>
+            <option value="fa-robot">Robot</option>
+            <option value="fa-ghost">Ghost</option>
+            <option value="fa-dragon">Dragon</option>
+        </select>
+        <button id="loginBtn">Login</button>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="edit-profile-modal" id="editProfileModal">
+        <div class="modal-content">
+            <h2>Edit Profile</h2>
+            <form id="editProfileForm">
+                <label for="editName">Name</label>
+                <input type="text" id="editName">
+                <label for="editEmail">Email</label>
+                <input type="email" id="editEmail">
+                <label for="editIcon">Profile Icon</label>
+                <select id="editIcon">
+                    <option value="fa-user">User</option>
+                    <option value="fa-cat">Cat</option>
+                    <option value="fa-dog">Dog</option>
+                    <option value="fa-robot">Robot</option>
+                    <option value="fa-ghost">Ghost</option>
+                    <option value="fa-dragon">Dragon</option>
+                </select>
+                <div class="btn-group">
+                    <button type="submit" class="save-btn">Save</button>
+                    <button type="button" class="cancel-btn" id="cancelProfileBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <div class="container">
+            <h1>Expense Categories</h1>
+            <div class="button-container">
+                <button class="add-category-btn" id="addCategoryBtn">+ Add New Category</button>
+            </div>
+            <div class="category-grid" id="categoryGrid">
+                <div class="category-card" data-name="Food & Dining" data-icon="fa-utensils" data-color="#ff6b6b" data-budget="500" data-currency="USD|$">
+                    <i class="fas fa-utensils" style="color: #ff6b6b;"></i>
+                    <h3>Food & Dining</h3>
+                    <p class="budget">Budget: $500</p>
+                    <p class="amount">Spent: $200</p>
+                    <div class="actions">
+                        <button class="edit-category"><i class="fas fa-edit"></i></button>
+                        <button class="delete-category"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="category-card" data-name="Housing/Rent" data-icon="fa-home" data-color="#4dabf7" data-budget="1500" data-currency="USD|$">
+                    <i class="fas fa-home" style="color: #4dabf7;"></i>
+                    <h3>Housing/Rent</h3>
+                    <p class="budget">Budget: $1500</p>
+                    <p class="amount">Spent: $1200</p>
+                    <div class="actions">
+                        <button class="edit-category"><i class="fas fa-edit"></i></button>
+                        <button class="delete-category"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="category-card" data-name="Transportation" data-icon="fa-car" data-color="#51cf66" data-budget="300" data-currency="USD|$">
+                    <i class="fas fa-car" style="color: #51cf66;"></i>
+                    <h3>Transportation</h3>
+                    <p class="budget">Budget: $300</p>
+                    <p class="amount">Spent: $150</p>
+                    <div class="actions">
+                        <button class="edit-category"><i class="fas fa-edit"></i></button>
+                        <button class="delete-category"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Modal -->
+    <div class="modal" id="categoryModal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Add New Category</h2>
+            <form id="categoryForm">
+                <label for="categoryName">Category Name</label>
+                <input type="text" id="categoryName" placeholder="Enter or select a category">
+                <label for="categorySelect">Or Select a Category</label>
+                <select id="categorySelect">
+                    <option value="">-- Choose a Category --</option>
+                    <option value="Food & Dining|fa-utensils|#ff6b6b">Food & Dining</option>
+                    <option value="Housing/Rent|fa-home|#4dabf7">Housing/Rent</option>
+                    <option value="Transportation|fa-car|#51cf66">Transportation</option>
+                    <option value="Utilities|fa-bolt|#ffd43b">Utilities</option>
+                    <option value="Entertainment|fa-ticket-alt|#ae3ec9">Entertainment</option>
+                    <option value="Shopping|fa-shopping-bag|#f783ac">Shopping</option>
+                    <option value="Health & Fitness|fa-heartbeat|#38d9a9">Health & Fitness</option>
+                    <option value="Education|fa-book|#ff922b">Education</option>
+                    <option value="Travel|fa-plane|#339af0">Travel</option>
+                    <option value="Personal Care|fa-spa|#868e96">Personal Care</option>
+                    <option value="Savings|fa-piggy-bank|#2f9e44">Savings</option>
+                    <option value="Insurance|fa-shield-alt|#f06595">Insurance</option>
+                    <option value="Groceries|fa-shopping-basket|#ffec99">Groceries</option>
+                    <option value="Dining Out|fa-utensil-spoon|#ff8787">Dining Out</option>
+                    <option value="Subscriptions|fa-tv|#748ffc">Subscriptions</option>
+                    <option value="Charity|fa-hand-holding-heart|#ff6f91">Charity</option>
+                    <option value="Pets|fa-paw|#51cf66">Pets</option>
+                    <option value="Hobbies|fa-paint-brush|#f783ac">Hobbies</option>
+                    <option value="Gifts|fa-gift|#ff922b">Gifts</option>
+                    <option value="Kids|fa-baby-carriage|#4dabf7">Kids</option>
+                    <option value="Home Maintenance|fa-tools|#868e96">Home Maintenance</option>
+                    <option value="Car Maintenance|fa-wrench|#339af0">Car Maintenance</option>
+                    <option value="Clothing|fa-tshirt|#ae3ec9">Clothing</option>
+                    <option value="Electronics|fa-laptop|#ffd43b">Electronics</option>
+                    <option value="Vacation|fa-suitcase|#ff6b6b">Vacation</option>
+                    <option value="Fitness Membership|fa-dumbbell|#38d9a9">Fitness Membership</option>
+                    <option value="Medical Expenses|fa-first-aid|#ff8787">Medical Expenses</option>
+                    <option value="Beauty|fa-magic|#f783ac">Beauty</option>
+                    <option value="Investments|fa-chart-line|#2f9e44">Investments</option>
+                    <option value="Debt Repayment|fa-credit-card|#f06595">Debt Repayment</option>
+                    <option value="Miscellaneous|fa-question|#ced4da">Miscellaneous</option>
+                </select>
+                <label for="categoryIcon">Icon</label>
+                <select id="categoryIcon">
+                    <option value="fa-utensils">Fork (Food)</option>
+                    <option value="fa-home">House (Housing)</option>
+                    <option value="fa-car">Car (Transportation)</option>
+                    <option value="fa-bolt">Bolt (Utilities)</option>
+                    <option value="fa-ticket-alt">Ticket (Entertainment)</option>
+                    <option value="fa-shopping-bag">Shopping Bag</option>
+                    <option value="fa-heartbeat">Heartbeat (Health)</option>
+                    <option value="fa-book">Book (Education)</option>
+                    <option value="fa-plane">Airplane (Travel)</option>
+                    <option value="fa-spa">Spa (Personal Care)</option>
+                    <option value="fa-piggy-bank">Piggy Bank (Savings)</option>
+                    <option value="fa-shield-alt">Shield (Insurance)</option>
+                    <option value="fa-shopping-basket">Basket (Groceries)</option>
+                    <option value="fa-utensil-spoon">Spoon (Dining Out)</option>
+                    <option value="fa-tv">TV (Subscriptions)</option>
+                    <option value="fa-hand-holding-heart">Heart (Charity)</option>
+                    <option value="fa-paw">Paw (Pets)</option>
+                    <option value="fa-paint-brush">Paint Brush (Hobbies)</option>
+                    <option value="fa-gift">Gift</option>
+                    <option value="fa-baby-carriage">Baby Carriage (Kids)</option>
+                    <option value="fa-tools">Tools (Home Maintenance)</option>
+                    <option value="fa-wrench">Wrench (Car Maintenance)</option>
+                    <option value="fa-tshirt">T-Shirt (Clothing)</option>
+                    <option value="fa-laptop">Laptop (Electronics)</option>
+                    <option value="fa-suitcase">Suitcase (Vacation)</option>
+                    <option value="fa-dumbbell">Dumbbell (Fitness)</option>
+                    <option value="fa-first-aid">First Aid (Medical)</option>
+                    <option value="fa-magic">Magic (Beauty)</option>
+                    <option value="fa-chart-line">Chart Line (Investments)</option>
+                    <option value="fa-credit-card">Credit Card (Debt)</option>
+                    <option value="fa-question">Question (Miscellaneous)</option>
+                </select>
+                <label for="categoryColor">Color</label>
+                <input type="color" id="categoryColor" value="#ff6b6b">
+                <label for="categoryCurrency">Currency</label>
+                <select id="categoryCurrency">
+                    <option value="USD|$">USD ($)</option>
+                    <option value="EUR|€">EUR (€)</option>
+                    <option value="GBP|£">GBP (£)</option>
+                    <option value="INR|₹">INR (₹)</option>
+                    <option value="JPY|¥">JPY (¥)</option>
+                    <option value="CAD|$">CAD ($)</option>
+                    <option value="AUD|$">AUD ($)</option>
+                    <option value="CHF|Fr">CHF (Fr)</option>
+                    <option value="CNY|¥">CNY (¥)</option>
+                    <option value="BRL|R$">BRL (R$)</option>
+                    <option value="MXN|$">MXN ($)</option>
+                    <option value="ZAR|R">ZAR (R)</option>
+                    <option value="KRW|₩">KRW (₩)</option>
+                    <option value="SGD|$">SGD ($)</option>
+                    <option value="NZD|$">NZD ($)</option>
+                </select>
+                <label for="categoryBudget">Monthly Budget</label>
+                <input type="range" id="categoryBudget" min="0" max="5000" step="50" value="0">
+                <span class="budget-value" id="budgetValue">$0</span>
+                <div class="btn-group">
+                    <button type="button" class="save-btn" id="saveCategoryBtn">Save</button>
+                    <button type="button" class="cancel-btn" id="cancelCategoryBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="categories.js"></script>
+</body>
+</html>

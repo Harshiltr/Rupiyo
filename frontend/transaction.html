@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rupiyo</title>
+  <link rel="stylesheet" href="transaction.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="top-bar">
+    <h1 class="logo">Rupiyo</h1>
+    <div class="top-controls">
+      <div class="dropdown">
+        <button class="dropbtn" id="sortBtn">Sort By ▾</button>
+        <div class="dropdown-content" id="dropdownMenu">
+          <a href="#" onclick="sortBy('date')">Date</a>
+          <a href="#" onclick="sortBy('amount')">Amount</a>
+        </div>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="modeToggle">
+        <span class="slider">
+          <span class="icon sun">🌞</span>
+          <span class="icon moon">🌙</span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="content">
+    <div id="historyContainer" class="history-container"></div>
+  </div>
+
+  <script src="transaction.js"></script>
+</body>
+</html>
